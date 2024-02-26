@@ -1,0 +1,51 @@
+# CONFIGURAÇÃO INICIAL
+# Obtém o reenchimento do editor baseado no esquema de configuração
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Insere uma linha branca entre os prompts do shell
+add_newline = true
+command_timeout = 10000
+# Substitui o símbolo '❯' no prompt por  '➜'
+#[character] # O nome do módulo que estamos configurando é  'character'
+#success_symbol = '[➜](bold green)' # O 'success_symbol' é definido para  '➜' com a cor 'bold green'
+
+# Desabilita o módulo package, escondendo completamente ele do prompt
+[package]
+disabled = true
+
+# DRACULA
+[aws]
+style = "bold #ffb86c"
+
+[character]
+error_symbol = "[➜](bold #ff5555)"
+success_symbol = "[➜](bold #50fa7b)"
+
+[cmd_duration]
+style = "bold #f1fa8c"
+#mintime = 10000  # Show command duration over 10,000 milliseconds (=10 sec)_
+
+[directory]
+style = "bold #50fa7b"
+
+[git_branch]
+style = "bold #ff79c6"
+
+[git_status]
+style = "bold #ff5555"
+
+[hostname]
+style = "bold #bd93f9"
+
+[username]
+format = "[$user]($style) on "
+style_user = "bold #8be9fd"
+
+[line_break]
+disabled = true
+
+# Um prompt mínimo à esquerda
+format = """$character"""
+
+# movw o restante do prompt para a direita
+right_format = """$all"""
