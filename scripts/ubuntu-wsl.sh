@@ -41,7 +41,7 @@ curl -sS https://starship.rs/install.sh | sh
 
 # Cria arquivo de configuração do Starship
 touch ~/.config/starship.toml
-cp config/starship.toml ~/.config/
+cp .config/starship.toml ~/.config/
 
 # Pacotes de dependencias Python para desenvolvimento.
 sudo apt install -y aria2 blt-dev build-essential /
@@ -114,12 +114,17 @@ pipx install poetry
 # Pacotes bestas.
 sudo apt install neofetch htop -y
 
-# Instala LunarVim
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-
 # Instala Tmux e Oh-My-Tmux!
 sudo apt install tmux -y
 git clone https://github.com/gpakosz/.tmux.git "/path/to/oh-my-tmux"
 mkdir -p "~/.config/tmux"
 ln -s "/path/to/oh-my-tmux/.tmux.conf" "~/.config/tmux/tmux.conf"
 cp "/path/to/oh-my-tmux/.tmux.conf.local" "~/.config/tmux/tmux.conf.local"
+
+# Instala LunarVim
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+
+# Configura LunarVim
+cd ~/.config
+mv lvim lvim-orig
+git clone https://github.com/oliveirabalsa/my-lunarvim.git lvim
