@@ -116,3 +116,10 @@ sudo apt install neofetch htop -y
 
 # Instala LunarVim
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+
+# Instala Tmux e Oh-My-Tmux!
+sudo apt install tmux -y
+git clone https://github.com/gpakosz/.tmux.git "/path/to/oh-my-tmux"
+mkdir -p "~/.config/tmux"
+ln -s "/path/to/oh-my-tmux/.tmux.conf" "~/.config/tmux/tmux.conf"
+cp "/path/to/oh-my-tmux/.tmux.conf.local" "~/.config/tmux/tmux.conf.local"
