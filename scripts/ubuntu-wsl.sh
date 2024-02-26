@@ -58,6 +58,7 @@ sudo apt install pipx -y
 
 # Instala Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
 
 # Configuração do Git
 git config --get --global user.email "wilsonsrochaneto@gmail.com"
