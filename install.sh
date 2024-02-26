@@ -2,7 +2,7 @@
 
 set -e
 
-scripts_dir="/scripts"
+scripts_dir="./scripts"
 
 # Lista de distros disponíveis
 distros=(ubuntu-wsl)
