@@ -34,7 +34,7 @@ sed -i 's/^plugins=\(.*\)/plugins=(\n  git\n  zsh-syntax-highlighting\n  zsh-aut
 # Adiciona alguns aliases em ".zshrc".
 echo '# MY ALIASES' >> ~/.zshrc
 echo 'alias ls="exa --icons --tree --level=2"' >> ~/.zshrc
-echo 'alias vim="lvim"'
+echo 'alias vim="lvim"' >> ~/.zshrc
 
 # Instala Starship
 curl -sS https://starship.rs/install.sh | sh
