@@ -63,7 +63,7 @@ function select_distro() {
     ./scripts/$selected_distro.sh
 }
 
-echo "\n\n### PÓS-INSTALAÇÃO DE DISTROS UNIX ###"
+echo -e "\n\n### PÓS-INSTALAÇÃO DE DISTROS UNIX ###\n\n"
 
 check_permissions "${scripts[@]}"
 

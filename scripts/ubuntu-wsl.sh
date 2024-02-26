@@ -4,13 +4,13 @@ set -e
 
 dir_installation=$(pwd)
 
-echo "### PACOTES PÓS-INSTALAÇÃO DO UBUNTU WSL ### \n\n"
-echo "---> Atualizando pacotes do Ubuntu. \n"
+echo -e "\n\n### PACOTES PÓS-INSTALAÇÃO DO UBUNTU WSL ### \n\n"
+echo -e "---> Atualizando pacotes do Ubuntu. \n"
 # Atualização de pacotes do Ubuntu.
 sudo apt update
 sudo apt upgrade -y
 
-echo "---> Instalando pacotes. \n"
+echo -e "\n\n---> Instalando pacotes. \n"
 
 # Pacotes importantes.
 sudo apt install git curl unzip wget fuse libfuse2 zsh -y
