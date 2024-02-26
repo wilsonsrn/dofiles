@@ -124,7 +124,7 @@ cp "/path/to/oh-my-tmux/.tmux.conf.local" "~/.config/tmux/tmux.conf.local"
 # Instala LunarVim
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 
-# Configura LunarVim
+# Baixa Config geral LunarVim
 cd ~/.config
 mv lvim lvim-orig
-git clone https://github.com/oliveirabalsa/my-lunarvim.git lvim
+git clone https://github.com/wilsonsrn/my-lunarvim.git lvim
