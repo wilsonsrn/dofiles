@@ -44,13 +44,13 @@ touch ~/.config/starship.toml
 cp .config/starship.toml ~/.config/
 
 # Pacotes de dependencias Python para desenvolvimento.
-sudo apt install -y aria2 blt-dev build-essential /
-checkinstall gettext libbz2-dev libc6-dev libffi-dev /
-libgdbm-dev liblzma-dev liblzma-doc libncurses5-dev /
-libncursesw5-dev libnss3-dev libnss3-tools libpq-dev /
-libreadline-dev libsqlite3-dev libssl-dev llvm lzma /
-python-dev python-openssl python3-dev python3-pip /
-python3-venv tcl-dev tk-dev xz-utils zlib1g-dev -y
+sudo apt install -y aria2 blt-dev build-essential \
+checkinstall gettext libbz2-dev libc6-dev libffi-dev \
+libgdbm-dev liblzma-dev liblzma-doc libncurses5-dev \
+libncursesw5-dev libnss3-dev libnss3-tools libpq-dev \
+libreadline-dev libsqlite3-dev libssl-dev llvm lzma \
+python3-dev python3-pip python3-venv tcl-dev tk-dev \
+xz-utils zlib1g-dev -y
 # Atualiza PIP
 pip install --upgrade pip
 # Instala PIPX
