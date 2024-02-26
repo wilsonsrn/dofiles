@@ -5,15 +5,21 @@ set -e
 dir_installation=$(pwd)
 
 echo -e "\n\n### PACOTES PÓS-INSTALAÇÃO DO UBUNTU WSL ### \n\n"
+sleep 1
 echo -e "---> Atualizando pacotes do Ubuntu. \n"
+sleep 2
 # Atualização de pacotes do Ubuntu.
 sudo apt update
 sudo apt upgrade -y
 
 echo -e "\n\n---> Instalando pacotes. \n"
+sleep 2
 
 # Pacotes importantes.
-sudo apt install git curl unzip wget fuse libfuse2 zsh -y
+sudo apt install git curl unzip wget fuse libfuse2 zsh cargo -y
+
+cargo --version
+sleep 2
 
 # Torna o ZSH o Shell principal.
 chsh -s $(which zsh)
@@ -57,8 +63,11 @@ pip install --upgrade pip
 sudo apt install pipx -y
 
 # Instala Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source "$HOME/.cargo/env"
+#curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#source "$HOME/.cargo/env"
+# Define as variáveis de ambiente do Rust
+#source\_cargo\_env\=</span>(source "$HOME/.cargo/env")
+#eval "$source_cargo_env"
 
 # Configuração do Git
 git config --get --global user.email "wilsonsrochaneto@gmail.com"
