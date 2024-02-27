@@ -12,11 +12,17 @@ scripts=()
 
 for distro in "${distros[@]}"; do
     script_file="$scripts_dir/$distro.sh"
+    zsh_script_file="$scripts_dir/zsh-$distro.sh"
 
     if [[ -f "$script_file" ]]; then
         scripts+=("$script_file")
     else
         echo "Erro: Script '$script_file' não encontrado."
+    fi
+    if [[ -f "$zsh_script_file" ]]; then
+        scripts+=("$zsh_script_file")
+    else
+        echo "Erro: Script '$zsh_script_file' não encontrado."
     fi
 done
 
