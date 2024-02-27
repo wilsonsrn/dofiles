@@ -4,7 +4,7 @@ set +x
 
 dir_installation=$(pwd)
 
-echo -e " Atualização de pacote no ZSH."
+echo -e " Atualização de pacote no ZSH.\n"
 sudo apt update
 sudo apt upgrade -y
 
@@ -20,7 +20,7 @@ echo -e "\n\n---> Cria pasta de configuração."
 mkdir -p ~/.config
 sleep 1
 
-echo -e "\n\n---> Instala o Oh-My-ZSH."
+echo -e "\n\n---> Instala o Oh-My-ZSH.\n"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 sleep 1
 
@@ -39,7 +39,7 @@ echo 'alias ls="exa --icons --tree --level=2"' >> ~/.zshrc
 echo 'alias vim="lvim"' >> ~/.zshrc
 sleep 1
 
-echo -e "\n\n---> Instala Starship."
+echo -e "\n\n---> Instala Starship.\n"
 curl -sS https://starship.rs/install.sh | sh
 sleep 1
 
