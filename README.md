@@ -72,8 +72,7 @@ sed -i 's/^plugins=\(.*\)/plugins=(\n  git\n  zsh-syntax-highlighting\n  zsh-aut
 
 Adiciona alguns aliases em *.zshrc*.
 ```bash
-echo '' >> ~/.zshrc
-echo '# MY ALIASES' >> ~/.zshrc
+echo -e '\n# MY ALIASES' >> ~/.zshrc
 echo 'alias ls="exa --icons --tree --level=2"' >> ~/.zshrc
 echo 'alias vim="lvim"' >> ~/.zshrc
 ```
@@ -91,6 +90,7 @@ echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
 Primeiro criamos o arquivo de configuração do Starship.
 ```bash
+mkdir -p ~/.config
 touch ~/.config/starship.toml
 ```
 Copie o conteúdo de [starship.toml](.config/starship.toml) para esse arquivo de mesmo nome.
@@ -134,7 +134,7 @@ source "$HOME/.cargo/env"
 Configuração do Git.
 ```bash
 git config --get --global user.email "xxxxxx@gmail.com"
-git config --get --global user.name "Wilson Rocha Neto"
+git config --get --global user.name "Wilson XXXXX"
 git config --global core.editor nvim
 git config --global credential.helper 'cache --timeout=7200'
 ```
@@ -166,7 +166,7 @@ sudo mv nvim.appimage /usr/local/bin/nvim
 
 <br/>
 
-Pacote adicionais em Rust.
+Pacotes adicionais em Rust.
 ```bash
 cargo install ripgrep
 cargo install exa
