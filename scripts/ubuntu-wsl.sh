@@ -92,9 +92,8 @@ sudo mv nvim.appimage /usr/local/bin/nvim
 NVM_VERSION=$(curl -s "https://api.github.com/repos/nvm-sh/nvm/releases/latest" | grep -Po '"tag_name": "\K[^"]*')
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_VERSION}/install.sh | bash
 
-# Atualiza os dois shells
+# Atualiza shell
 source ~/.bashrc
-source ~/.zshrc
 
 # Instala o Node mais recente
 nvm install node
