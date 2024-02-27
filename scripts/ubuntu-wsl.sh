@@ -22,4 +22,4 @@ chsh -s $(which zsh)
 echo -e "\n\n---> Inicia script no ZSH."
 sh ./zsh-ubuntu-wsl.sh
 
-echo -e "\n\n---> Bash script finalizado!
+echo -e "\n\n---> Bash script finalizado!"
