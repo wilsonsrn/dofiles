@@ -70,7 +70,7 @@ sleep 1
 printf "\n\n---> Instala Rust."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source "$HOME/.cargo/env"
-export PATH="\$HOME/.cargo/bin:\$PATH"
+#export PATH="\$HOME/.cargo/bin:\$PATH"
 #printf "\n\n---> Define as variáveis de ambiente do Rust"
 #source\_cargo\_env\=</span>(source "$HOME/.cargo/env")
 #eval "$source_cargo_env"
