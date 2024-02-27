@@ -20,6 +20,6 @@ echo -e "\n\n---> Torna o ZSH o Shell principal."
 chsh -s $(which zsh)
 
 echo -e "\n\n---> Inicia script no ZSH."
-sh ./zsh-ubuntu-wsl.sh
+sh ./scripts/zsh-ubuntu-wsl.sh
 
 echo -e "\n\n---> Bash script finalizado!"
