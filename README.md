@@ -83,6 +83,8 @@ echo 'alias vim="lvim"' >> ~/.zshrc
 Instala Starship.
 ```bash
 curl -sS https://starship.rs/install.sh | sh
+echo -e '\n# Starship init' >> ~/.zshrc
+echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 ```
 
 <br/>
