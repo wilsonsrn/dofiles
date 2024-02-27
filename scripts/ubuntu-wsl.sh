@@ -16,7 +16,7 @@ sleep 2
 echo -e "\n\n---> Instala o shell ZSH."
 sudo apt install zsh -y
 
-echo -e "\n\n---> Torna o ZSH o Shell principal."
+echo -e "\n\n---> Torna o ZSH o Shell principal.\n"
 chsh -s $(which zsh)
 
 echo -e "\n\n---> Inicia script no ZSH."
