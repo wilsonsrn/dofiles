@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-set -x
-
 dir_installation=$('~/dotfiles')
 
 printf "\n\n### PACOTES PÓS-INSTALAÇÃO DO UBUNTU WSL ### \n\n"
