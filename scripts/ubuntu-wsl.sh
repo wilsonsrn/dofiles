@@ -4,9 +4,9 @@ set -x
 
 dir_installation=$('~/dotfiles')
 
-echo -e "\n\n### PACOTES PÓS-INSTALAÇÃO DO UBUNTU WSL ### \n\n"
+printf "\n\n### PACOTES PÓS-INSTALAÇÃO DO UBUNTU WSL ### \n\n"
 sleep 1
-echo -e "---> Atualização de pacotes do Ubuntu."
+printf "---> Atualização de pacotes do Ubuntu."
 sudo add-apt-repository universe
 sudo apt update
 sudo apt upgrade -y
@@ -45,7 +45,7 @@ sleep 1
 
 printf "\n\n---> Instala Starship.\n"
 curl -sS https://starship.rs/install.sh | sh
-echo -e '\n# Starship init' >> ~/.zshrc
+printf '\n# Starship init' >> ~/.zshrc
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 sleep 1
 
