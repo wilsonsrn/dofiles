@@ -4,7 +4,16 @@
 
 ## Usage
 
-Apenas execute:
+1 - Primeiramente é necessário instalar o shell *Zsh*. Portanto, execute:
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+sudo apt install zsh -y
+chsh -s $(which zsh)
+```
+
+2 - Então apenas execute os comandos abaixo para iniciar o instalador:
 
 ```bash
 git clone https://github.com/wilsonsrn/dotfiles.git && cd dotfiles
