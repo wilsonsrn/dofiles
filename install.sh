@@ -28,7 +28,17 @@ function check_permissions() {
 
 # Mostra o menu de seleção
 function select_distro() {
-  echo "Qual instalação deseja executar?"
+  banner="
+--------------------------------------------------------------------
+█▀█ █▀█ █▀ ▄▄ █ █▄░█ █▀ ▀█▀ ▄▀█ █░░ ▄▀█ █▀▀ ▄▀█ █▀█   █░█ █▄░█ █ ▀▄▀
+█▀▀ █▄█ ▄█ ░░ █ █░▀█ ▄█ ░█░ █▀█ █▄▄ █▀█ █▄▄ █▀█ █▄█   █▄█ █░▀█ █ █░█
+
+█▄▄ █▄█ ▀   █░█░█ █ █░░ █▀ █▀█ █▄░█ █▀ █▀█ █▄░█
+█▄█ ░█░ ▄   ▀▄▀▄▀ █ █▄▄ ▄█ █▄█ █░▀█ ▄█ █▀▄ █░▀█
+--------------------------------------------------------------------
+"
+  echo "$banner"
+  printf "\nQual instalação deseja executar?\n"
   enum=1
   for distro in distros; do
     echo "[$enum] ${distros[$enum]}"
