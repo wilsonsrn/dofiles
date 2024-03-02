@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-dir_installation=$('~/dotfiles')
+dir_installation='~/dotfiles'
 
 printf "\n\n### PACOTES PÓS-INSTALAÇÃO DO UBUNTU WSL ### \n\n"
 printf "---> Atualização de pacotes do Ubuntu.\n"
