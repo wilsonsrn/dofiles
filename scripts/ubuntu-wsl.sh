@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-dir_installation='~/dotfiles'
+dir_installation=~/dotfiles
 
 printf "\n\n### PACOTES PÓS-INSTALAÇÃO DO UBUNTU WSL ### \n\n"
 printf "---> Atualização de pacotes do Ubuntu.\n"
@@ -49,7 +49,6 @@ echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
 printf "\n\n---> Adiciona arquivo de configuração do Starship.\n"
 sleep 1
-mkdir -p ~/.config
 cp $dir_installation/.config/starship.toml ~/.config/
 
 printf "\n\n---> Pacotes de dependencias Python para desenvolvimento.\n"
