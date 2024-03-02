@@ -63,16 +63,13 @@ function select_distro() {
 for distro in "${distros[@]}"; do
   script_file="$scripts_dir/$distro.sh"
   zsh_script_file="$scripts_dir/zsh-$distro.sh"
-  echo "# 1 LOOP"
 
   if [[ -f "$script_file" ]]; then
-    echo "Existe 1"
     scripts+=("$script_file")
   else
     echo "Erro: Script '$script_file' não encontrado."
   fi
   if [[ -f "$zsh_script_file" ]]; then
-    echo "Existe 2"
     scripts+=("$zsh_script_file")
   else
     echo "Erro: Script '$zsh_script_file' não encontrado."
