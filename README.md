@@ -13,7 +13,7 @@ sudo apt install zsh -y
 chsh -s $(which zsh)
 ```
 
-2 - Então apenas execute os comandos abaixo para iniciar o instalador:
+2 - Após reinciar o shell, apenas execute os comandos abaixo para iniciar o instalador:
 
 ```bash
 git clone https://github.com/wilsonsrn/dotfiles.git && cd dotfiles
