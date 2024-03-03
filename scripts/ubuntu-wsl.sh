@@ -74,6 +74,14 @@ sleep 1
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source "$HOME/.cargo/env"
 
+printf "\n\n---> Instala Git Credential Manager.\n"
+sleep 1
+GCM_VERSION=$(curl -s "https://api.github.com/repos/git-ecosystem/git-credential-manager/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+wget https://github.com/git-ecosystem/git-credential-manager/releases/download/v$GCM_VERSION/gcm-linux_amd64.$GCM_VERSION.deb
+GCM_FILE=$(find gcm*)
+sudo dpkg -i $GCM_FILE
+git-credential-manager configure
+
 printf "\n\n---> Configuração do Git.\n"
 
 echo "Digite seu nome de usuário Git:\n"
@@ -81,10 +89,11 @@ read nome_git
 echo "Digite seu email Git:\n"
 read email_git
 
-git config --get --global user.name $nome_git
-git config --get --global user.email $email_git
+git config --global user.name $nome_git
+git config --global user.email $email_git
 git config --global core.editor nvim
-git config --global credential.helper 'cache --timeout=7200'
+git config --global credential.credentialStore cache
+git config --global credential.cacheOptions "--timeout 7200"
 sleep 1
 
 printf "\n\n---> Instala pacote GitHub.\n"
