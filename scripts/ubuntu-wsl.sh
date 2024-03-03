@@ -76,11 +76,14 @@ source "$HOME/.cargo/env"
 
 printf "\n\n---> Instala Git Credential Manager.\n"
 sleep 1
+mkdir -p ~/.stuff
+cd ~/.stuff
 GCM_VERSION=$(curl -s "https://api.github.com/repos/git-ecosystem/git-credential-manager/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 wget https://github.com/git-ecosystem/git-credential-manager/releases/download/v$GCM_VERSION/gcm-linux_amd64.$GCM_VERSION.deb
 GCM_FILE=$(find gcm*)
 sudo dpkg -i $GCM_FILE
 git-credential-manager configure
+cd $dir_installation
 
 printf "\n\n---> Configuração do Git.\n"
 
@@ -109,7 +112,6 @@ sudo mv nvim.appimage /usr/local/bin/nvim
 
 printf "\n\n---> Instala LazyGit.\n"
 sleep 1
-mkdir -p ~/.stuff
 cd ~/.stuff
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
