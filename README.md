@@ -140,20 +140,24 @@ source "$HOME/.cargo/env"
 
 <br/>
 
-Configuração do Git.
+Instala Git Credential Manager.
 ```bash
-git config --get --global user.email "xxxxxx@gmail.com"
-git config --get --global user.name "Wilson XXXXX"
-git config --global core.editor nvim
-git config --global credential.helper 'cache --timeout=7200'
+GCM_VERSION=$(curl -s "https://api.github.com/repos/git-ecosystem/git-credential-manager/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+wget https://github.com/git-ecosystem/git-credential-manager/releases/download/v$GCM_VERSION/gcm-linux_amd64.$GCM_VERSION.deb
+GCM_FILE=$(find gcm*)
+sudo dpkg -i $GCM_FILE
+git-credential-manager configure
 ```
 
 <br/>
 
-Instala Git Credential Manager.
+Configuração do Git.
 ```bash
-curl -L https://aka.ms/gcm/linux-install-source.sh | sh
-git-credential-manager configure
+git config --global user.name "xxxxxx@gmail.com"
+git config --global user.email "Wilson XXXXX"
+git config --global core.editor nvim
+git config --global credential.credentialStore cache
+git config --global credential.cacheOptions "--timeout 7200"
 ```
 
 <br/>
