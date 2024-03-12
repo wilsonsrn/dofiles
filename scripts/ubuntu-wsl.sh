@@ -32,7 +32,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 printf '\n\n---> Adiciona plugins em ".zshrc".\n'
 sleep 1
-sed -i 's/^plugins=\(.*\)/plugins=(\n  git\n  zsh-syntax-highlighting\n  zsh-autosuggestions\n thefuck\n  )/g' ~/.zshrc
+sed -i 's/^plugins=\(.*\)/plugins=(\n  git\n  zsh-syntax-highlighting\n  zsh-autosuggestions\n  thefuck\n)/g' ~/.zshrc
 
 printf '\n\n---> Adiciona alguns aliases em ".zshrc".\n'
 sleep 1
@@ -40,11 +40,13 @@ echo '' >> ~/.zshrc
 echo '# MY ALIASES' >> ~/.zshrc
 echo 'alias ls="exa --icons --tree --level=2"' >> ~/.zshrc
 echo 'alias vim="lvim"' >> ~/.zshrc
+echo 'alias penv="source \$(poetry env info --path)/bin/activate"' >> ~/.zshrcv
 
 printf "\n\n---> Instala Starship.\n"
 sleep 1
 curl -sS https://starship.rs/install.sh | sh
-printf '\n# Starship init' >> ~/.zshrc
+echo '' >> ~/.zshrc
+echo '# Starship init' >> ~/.zshrc
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
 printf "\n\n---> Adiciona arquivo de configuração do Starship.\n"
@@ -74,35 +76,34 @@ sleep 1
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source "$HOME/.cargo/env"
 
-printf "\n\n---> Instala Git Credential Manager.\n"
-sleep 1
-mkdir -p ~/.stuff
-cd ~/.stuff
-GCM_VERSION=$(curl -s "https://api.github.com/repos/git-ecosystem/git-credential-manager/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-wget https://github.com/git-ecosystem/git-credential-manager/releases/download/v$GCM_VERSION/gcm-linux_amd64.$GCM_VERSION.deb
-GCM_FILE=$(find gcm*)
-sudo dpkg -i $GCM_FILE
-git-credential-manager configure
-cd $dir_installation
+#printf "\n\n---> Instala Git Credential Manager.\n"
+#sleep 1
+#mkdir -p ~/.stuff
+#cd ~/.stuff
+#GCM_VERSION=$(curl -s "https://api.github.com/repos/git-ecosystem/git-credential-manager/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+#wget https://github.com/git-ecosystem/git-credential-manager/releases/download/v$GCM_VERSION/gcm-linux_amd64.$GCM_VERSION.deb
+#GCM_FILE=$(find gcm*)
+#sudo dpkg -i $GCM_FILE
+#git-credential-manager configure
+#cd $dir_installation
 
 printf "\n\n---> Configuração do Git.\n"
 
-echo "Digite seu nome de usuário Git:\n"
+echo "Digite seu nome de usuário Git: "
 read nome_git
-echo "Digite seu email Git:\n"
+echo "Digite seu email Git: "
 read email_git
 
 git config --global user.name $nome_git
 git config --global user.email $email_git
 git config --global core.editor nvim
-git config --global credential.credentialStore cache
-git config --global credential.cacheOptions "--timeout 7200"
+git config --global credential.credentialStore store
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
 sleep 1
 
 printf "\n\n---> Instala pacote GitHub.\n"
 sleep 1
 sudo apt install gh -y
-gh auth login
 
 printf "\n\n---> Instala Neovim.\n"
 sleep 1
@@ -175,12 +176,12 @@ printf "\n\n---> Instala LunarVim.\n"
 sleep 1
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 
-printf "\n\n---> Baixa Config geral LunarVim do repositorio wilsonsrn.\n"
-sleep 1
-cd ~/.config
-mv lvim lvim-orig
-git clone https://github.com/wilsonsrn/my-lunarvim.git lvim
-cd $dir_installation
+#printf "\n\n---> Baixa Config geral LunarVim do repositorio wilsonsrn.\n"
+#sleep 1
+#cd ~/.config
+#mv lvim lvim-orig
+#git clone https://github.com/wilsonsrn/my-lunarvim.git lvim
+#cd $dir_installation
 
 printf "\n\n---> Shell script finalizado.\n"
 sleep 3
