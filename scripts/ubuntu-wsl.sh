@@ -113,6 +113,7 @@ sudo mv nvim.appimage /usr/local/bin/nvim
 
 printf "\n\n---> Instala LazyGit.\n"
 sleep 1
+mkdir -p ~/.stuff
 cd ~/.stuff
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
@@ -133,9 +134,17 @@ printf "\n\n---> Instala Poetry.\n"
 sleep 1
 pipx install poetry
 
+printf "\n\n---> Instala TheFuck.\n"
+sleep 1
+pipx install thefuck
+
 printf "\n\n---> Adiciona PIPX ao PATH.\n"
 sleep 1
 pipx ensurepath
+
+printf "\n\n---> Instala Pynvim.\n"
+sleep 1
+pip install pynvim
 
 printf "\n\n---> Instala a versão mais recente do nvm.\n"
 sleep 1
@@ -146,6 +155,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | 
 printf "\n\n---> Atualiza Zsh shell.\n"
 sleep 1
 source ~/.zshrc
+
+printf "\n\n---> Instala suporte node para Neovim.\n"
+sleep 1
+cd 
+npm i -g neovim
 
 printf "\n\n---> Pacote adicionais em Rust.\n"
 sleep 1
