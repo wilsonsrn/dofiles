@@ -262,5 +262,5 @@ cd ~/.config
 mv lvim lvim-orig
 git clone https://github.com/wilsonsrn/my-lunarvim.git lvim
 lvim +LvimUpdate +LvimCacheReset +q
-lvim # Execute :Lazy syncv
+lvim # Execute :Lazy sync
 ```
