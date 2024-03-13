@@ -156,6 +156,14 @@ printf "\n\n---> Atualiza Zsh shell.\n"
 sleep 1
 source ~/.zshrc
 
+printf "\n\n---> Instala o Node mais recente.\n"
+nvm install node
+sleep 1
+
+printf "\n\n---> Atualiza Zsh shell.\n"
+sleep 1
+source ~/.zshrcv
+
 printf "\n\n---> Instala suporte node para Neovim.\n"
 sleep 1
 cd 
@@ -165,14 +173,6 @@ printf "\n\n---> Pacote adicionais em Rust.\n"
 sleep 1
 cargo install ripgrep
 cargo install exa
-
-printf "\n\n---> Atualiza Zsh shell.\n"
-sleep 1
-source ~/.zshrc
-
-printf "\n\n---> Instala o Node mais recente.\n"
-nvm install node
-sleep 1
 
 printf "\n\n---> Atualiza Zsh shell.\n"
 sleep 1
