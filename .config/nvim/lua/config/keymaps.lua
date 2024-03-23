@@ -33,15 +33,20 @@ keymap.set("n", "<C-w><right>", "<C-w>>")
 keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 
+-- navigate within insert mode
+keymap.set("i", "<C-h>", "<Left>")
+keymap.set("i", "<C-l>", "<Right>")
+keymap.set("i", "<C-j>", "<Down>")
+keymap.set("i", "<C-k>", "<Up>")
+
+-- go to beginning and end
+keymap.set("i", "<C-b>", "<ESC>^i")
+keymap.set("i", "<C-e>", "<End>")
+
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
   vim.diagnostic.goto_next()
 end, opts)
 
---keymap.set("n", "<leader>r", function()
--- require("craftzdog.hsl").replaceHexWithHSL()
---end)
-
---keymap.set("n", "<leader>i", function()
---  require("craftzdog.lsp").toggleInlayHints()
---end)
+-- inc-rename
+keymap.set("n", "<leader>rn", ":IncRename ")

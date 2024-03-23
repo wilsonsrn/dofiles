@@ -1,13 +1,10 @@
 return {
+
   {
-    "Mofiqul/dracula.nvim",
+    "maxmx03/dracula.nvim",
     lazy = true,
     priority = 1000,
-    opts = function()
-      return {
-        transparent = true,
-      }
-    end,
+    opts = { transparent = true },
   },
 
   {
@@ -51,6 +48,13 @@ return {
         treesitter_context = true,
         which_key = true,
       },
+    },
+  },
+
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "dracula",
     },
   },
 }
