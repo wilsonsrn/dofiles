@@ -183,6 +183,7 @@ Pacotes adicionais em Rust.
 ```bash
 cargo install ripgrep
 cargo install exa
+cargo install fd-find
 ```
 
 <br/>
