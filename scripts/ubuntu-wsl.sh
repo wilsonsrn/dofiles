@@ -38,8 +38,9 @@ printf '\n\n---> Adiciona alguns aliases em ".zshrc".\n'
 sleep 1
 echo '' >> ~/.zshrc
 echo '# MY ALIASES' >> ~/.zshrc
-echo 'alias ls="exa --icons --tree --level=2"' >> ~/.zshrc
-echo 'alias vim="lvim"' >> ~/.zshrc
+echo 'alias ls="exa --icons -1"' >> ~/.zshrc
+echo 'alias ll="exa --icons --tree --level=2"' >> ~/.zshrc
+echo 'alias vim="TERM=tmux nvim"' >> ~/.zshrc
 echo 'alias penv="source \$(poetry env info --path)/bin/activate"' >> ~/.zshrcv
 
 printf "\n\n---> Instala Starship.\n"
@@ -175,6 +176,19 @@ cargo install ripgrep
 cargo install exa
 cargo install fd-find
 cargo install bat
+
+printf "\n\n---> Instala FZF.\n"
+sleep 1
+echo '' >> ~/.zshrc
+echo '# FZF' >> ~/.zshrc
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+echo 'export FZF_CTRL_T_OPTS="' >> ~/.zshrc
+echo '  --walker-skip .git,node_modules,target' >> ~/.zshrc
+echo '  --preview \'bat -n --color=always --line-range :500 {}\'' >> ~/.zshrc
+echo '  --bind \'ctrl-/:change-preview-window(down|hidden|)\'\"' >> ~/.zshrc
+echo 'export FZF_DEFAULT_OPTS=\'--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4\'' >> ~/.zshrc
+
 
 printf "\n\n---> Atualiza Zsh shell.\n"
 sleep 1
