@@ -174,6 +174,7 @@ sleep 1
 cargo install ripgrep
 cargo install exa
 cargo install fd-find
+cargo install bat
 
 printf "\n\n---> Atualiza Zsh shell.\n"
 sleep 1
