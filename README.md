@@ -82,8 +82,10 @@ sed -i 's/^plugins=\(.*\)/plugins=(\n  git\n  zsh-syntax-highlighting\n  zsh-aut
 Adiciona alguns aliases em *.zshrc*.
 ```bash
 echo -e '\n# MY ALIASES' >> ~/.zshrc
-echo 'alias ls="exa --icons --tree --level=2"' >> ~/.zshrc
-echo 'alias vim="lvim"' >> ~/.zshrc
+echo 'alias ls="exa --icons -1' >> ~/.zshrc
+echo 'alias ll="exa --icons --tree --level=2"' >> ~/.zshrc
+echo 'alias vim="TERM=tmux nvim"' >> ~/.zshrc
+echo 'alias penv='source $(poetry env info --path)/bin/activate'' >> ~/.zshrc
 ```
 
 <br/>
