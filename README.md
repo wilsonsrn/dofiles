@@ -184,6 +184,7 @@ Pacotes adicionais em Rust.
 cargo install ripgrep
 cargo install exa
 cargo install fd-find
+cargo install bat
 ```
 
 <br/>
