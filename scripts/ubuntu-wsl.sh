@@ -202,9 +202,9 @@ git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
 
-printf "\n\n---> Instala LunarVim.\n"
-sleep 1
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+#printf "\n\n---> Instala LunarVim.\n"
+#sleep 1
+#LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 
 #printf "\n\n---> Baixa Config geral LunarVim do repositorio wilsonsrn.\n"
 #sleep 1
